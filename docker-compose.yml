@@ -2,7 +2,7 @@ services:
   provider-a-api:
     build:
       context: .
-      dockerfile: apps/provider-a/Dockerfile
+      dockerfile: provider-a/Dockerfile
     container_name: provider-a
     environment:
       - PORT=3001
@@ -12,7 +12,7 @@ services:
   provider-b-api:
     build:
       context: .
-      dockerfile: apps/provider-b/Dockerfile
+      dockerfile: provider-b/Dockerfile
     container_name: provider-b
     environment:
       - PORT=3002
@@ -22,11 +22,11 @@ services:
   main-api:
     build:
       context: .
-      dockerfile: apps/main-api/Dockerfile
+      dockerfile: main-api/Dockerfile
     container_name: main-api
     depends_on:
-      - provider-a
-      - provider-b
+      - provider-a-api
+      - provider-b-api
     environment:
       - PORT=3000
     ports:
