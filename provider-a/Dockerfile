@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-WORKDIR /app/apps/provider-a-api
+WORKDIR /app/provider-a
 
 EXPOSE 3001
 

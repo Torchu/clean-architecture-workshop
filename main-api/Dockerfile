@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-WORKDIR /app/apps/main-api
+WORKDIR /app/main-api
 
 EXPOSE 3000
 
